@@ -1,2 +1,6 @@
-# optimalGLMM
-Algorithms that automatically explores optimal generalized linear mixed models (GLMMs) for hierarchical data
+# optimalLMM
+Algorithms that automatically explores optimal linear mixed models (LMMs) for hierarchical data. 
+
+It is designed to mimic how experienced researchers identify the best-fitting LMM using artificial intelligence. This algorithm employs a forward selection approach, which starts with a model containing no predictors and then adds predictors one at a time until a complex model with the newly added predictor is not significantly different from a simpler model. Unlike traditional forward selection, which adds the predictor that yields the greatest additional improvement to the model fit, the algorithm selects the predictor based on its statistical importance in prediction, as determined by machine learning methods (here, mixed-effects random forest; Hajjem et al., 2014). 
+
+The algorithm searches for the best-fitting model through three primary steps: preparation, predictor selection, and model selection. Since exploring the best-fitting LMM is complicated, two variations of the algorithm are developed to reflect the complexity of the optimal LMM selection. With a commonly applied preparation step, optimalLMM sequentially performs predictor and model selection steps, whereas optimalLMM2 alternates between these steps. More detailed explanations are provided in the next sections. 
